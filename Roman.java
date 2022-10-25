@@ -2,14 +2,15 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class Roman {
-    String str;
+    String str, romanSum;
+
     Roman(String str) {
         this.str = str;
     }
 
         int one, two, sum;
         String one1, two1, s1, s2;
-        public void run () {
+        public String run () {
 
             int len = str.length();
             int pluse = str.indexOf("+");
@@ -44,15 +45,25 @@ public class Roman {
             rome[21] = "XXI";
             rome[24] = "XXIV";
             rome[25] = "XXV";
+            rome[27] = "XXVII";
+            rome[28] = "XXVIII";
             rome[30] = "XXX";
+            rome[32] = "XXXII";
+            rome[35] = "XXXV";
             rome[36] = "XXXVI";
             rome[40] = "XL";
+            rome[42] = "XLII";
+            rome[45] = "XLV";
+            rome[48] = "XLVIII";
             rome[49] = "XLIX";
             rome[50] = "L";
+            rome[54] = "LIV";
             rome[56] = "LVI";
             rome[60] = "LX";
+            rome[63] = "LXIII";
             rome[64] = "LXIV";
             rome[70] = "LXX";
+            rome[72] = "LXXII";
             rome[80] = "LXXX";
             rome[81] = "LXXXI";
             rome[90] = "XC";
@@ -80,7 +91,7 @@ public class Roman {
                             }
                         }
                         sum = one + two;
-                        System.out.println(rome[sum]);
+                        romanSum = rome[sum];
                     }
 
                     if (minus == c) {
@@ -100,7 +111,7 @@ public class Roman {
                             }
                         }
                         sum = one - two;
-                        System.out.println(rome[sum]);
+                        romanSum = rome[sum];
                     }
 
                     if (multiplication == c) {
@@ -121,7 +132,7 @@ public class Roman {
                             }
                         }
                         sum = one * two;
-                        System.out.println(rome[sum]);
+                        romanSum = rome[sum];
                     }
 
                     if (division == c) {
@@ -142,7 +153,7 @@ public class Roman {
                             }
                         }
                         sum = one / two;
-                        System.out.println(rome[sum]);
+                        romanSum = rome[sum];
                     }
 
                 }
@@ -153,7 +164,7 @@ public class Roman {
                 throw new Error("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
             }
 
-
+            return romanSum;
     }
 }
 

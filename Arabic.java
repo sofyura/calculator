@@ -6,12 +6,12 @@ public class Arabic {
 
     Byte x1;
     Byte x2;
-
+    int sum;
     Arabic(String str) {
         this.str = str;
     }
 
-    public void run() {
+    public int run() {
 
         int len = str.length();
         int pluse = str.indexOf("+");
@@ -27,51 +27,47 @@ public class Arabic {
 
                     x1 = Byte.valueOf(s[0]);
                     x2 = Byte.valueOf(s[1]);
-                    if((x1<0 || x1>10)||(x2<0||x2>10)){
+                    if ((x1 < 0 || x1 > 10) || (x2 < 0 || x2 > 10)) {
                         throw new Error("throws Exception");
-                    }
-                    else {
-                        System.out.print(x1 + x2);
+                    } else {
+                        sum = (x1 + x2);
                     }
                 }
                 if (minus == c) {
                     String[] s = str.split("-");
                     x1 = Byte.valueOf(s[0]);
                     x2 = Byte.valueOf(s[1]);
-                    if((x1<0 || x1>10)||(x2<0||x2>10)){
+                    if ((x1 < 0 || x1 > 10) || (x2 < 0 || x2 > 10)) {
                         throw new Error("throws Exception");
-                    }
-                    else {
-                        System.out.print(x1 - x2);
+                    } else {
+                        sum = (x1 - x2);
                     }
                 }
                 if (multiplication == c) {
                     String[] s = str.split("\\*");
                     x1 = Byte.valueOf(s[0]);
                     x2 = Byte.valueOf(s[1]);
-                    if((x1<0 || x1>10)||(x2<0||x2>10)){
+                    if ((x1 < 0 || x1 > 10) || (x2 < 0 || x2 > 10)) {
                         throw new Error("throws Exception");
-                    }
-                    else {
-                        System.out.print(x1 * x2);
+                    } else {
+                        sum = (x1 * x2);
                     }
                 }
                 if (division == c) {
                     String[] s = str.split("/");
                     x1 = Byte.valueOf(s[0]);
                     x2 = Byte.valueOf(s[1]);
-                    if((x1<0 || x1>10)||(x2<0||x2>10)){
+                    if ((x1 < 0 || x1 > 10) || (x2 < 0 || x2 > 10)) {
                         throw new Error("throws Exception");
-                    }
-                    else {
-                        System.out.print(x1 / x2);
+                    } else {
+                        sum = (x1 / x2);
                     }
                 }
             }
         } else {
             throw new Error("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
         }
-
+        return sum;
     }
 }
 
